@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css';
 
 const NavBar = ({accounts, setAccounts}) => {
     const isConnected = Boolean(accounts[0]);
@@ -12,20 +13,26 @@ const NavBar = ({accounts, setAccounts}) => {
         }
     }
     return (
-        <div>
-            {/*Left side - Social media Icons*/}
-            <div>Facebook</div>
-            <div>Twitter</div>
-            <div>Email</div>
+        <div className='navBar'>
+            <div className='util'>
+                {/*Left side - Social media Icons*/}
+                <div>Facebook</div>
+                <div>Twitter</div>
+                <div>Email</div>
 
-            {/* Right Side - Sections and Connect*/}
-            <div>About</div>
-            <div>Mint</div>
-            <div>Team</div>
+                {/* Right Side - Sections and Connect*/}
+                <div>About</div>
+                <div>Mint</div>
+                <div>Admin</div> 
+            </div>
+            
 
             {/* Connect */}
             { isConnected ? (
-                <p>Connected</p>
+                <div>
+                    <p>Connected</p>
+                    <p>Account: {accounts}</p>
+                </div>
             ): (
                 <button onClick={connectAccount}>Connect Wallet</button>
             )}

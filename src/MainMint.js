@@ -3,7 +3,8 @@ import { useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import TekCouponNFT from './TekCouponNFT.json';
 
-const tekCouponNFTContractAddress = "0xCa99934AE9D71b53DA08fD96B4Ae524aF5A4E625";
+
+const tekCouponNFTContractAddress = "0x432adb4CD7fAAeD9F5536830285bca58026778a7";
 const MainMint = ({accounts, setAccounts}) => {
     const [mintAmount, setMintAmount] = useState(1);
     //check if accounts[0] exists
@@ -20,20 +21,25 @@ const MainMint = ({accounts, setAccounts}) => {
             );
             try {
                 //Solidity requires to have big number
-                const response = await contract.mint(BigNumber.from(mintAmount));
+                // value is a property of BigNumber
+                const response = await contract.mint(BigNumber.from(mintAmount), {
+                    value: ethers.utils.parseEther((0.02 * mintAmount).toString())
+                }); 
                 console.log('response', response)
             } catch (err) {
                 console.log("error", err)
             }
         }
     }
-    
+
     const handleDecrement = () => {
+        // Retrieve accounts from the local node
         if(mintAmount <= 1) return;
         setMintAmount(mintAmount - 1);
     }
 
     const handleIncrement = () => {
+        console.log(mintAmount);
         if(mintAmount >= 3) return;
         setMintAmount(mintAmount + 1);
     }
@@ -41,14 +47,11 @@ const MainMint = ({accounts, setAccounts}) => {
     return (
         <div>
             <h1>TekCouponNFT</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tortor metus, maximus at sollicitudin eget, 
-            ultricies id nulla. Nam pretium sapien sed lorem posuere viverra.
-            </p>
             {isConnected ? (
                 <div>
                     <div>
                         <button onClick={handleDecrement}>-</button>
-                        <input type="number" value={mintAmount}/>
+                        <input type="number" defaultValue={mintAmount}/>
                         <button onClick={handleIncrement}>+</button>
                     </div>
                     <button onClick={handleMint}>Mint Coupon</button>

@@ -17,7 +17,7 @@ To deploy a smart contract to a testnet (for example: ropsten testnet network), 
 npx hardhat run scripts/TekCouponNFTDeploy.js --network ropsten
 ```
 
-To verify deployed contract on Etherscan
+To verify deployed contract on Etherscan and to be able to read and write contract directly on Etherscan
 ```shell
 npx hardhat verify  --network networkName contractAddress
 ```
