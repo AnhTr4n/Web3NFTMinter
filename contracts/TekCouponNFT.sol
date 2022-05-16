@@ -18,6 +18,7 @@ contract TekCouponNFT is ERC721, Ownable {
     mapping(address => uint256) public walletMints;
 
     //Initialize variables in contructor is slightly cheaper than initilize them in declaration
+    //Contruct will be run when we deploy it to the blockchain
     constructor() payable ERC721('TekCoupon', 'TKC'){
         mintPrice = 0.02 ether;
         totalSupply = 0;
