@@ -8,11 +8,11 @@ import {
 import { useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import TekCouponNFT from '../TekCouponNFT.json';
-function Buy() {
+function Buy({address}) {
   const tekCouponNFTContractAddress = "0x432adb4CD7fAAeD9F5536830285bca58026778a7";
   const [mintAmount, setMintAmount] = useState(1);
 
-
+  console.log(address)
   async function handleMint() {
     if (window.ethereum) {
       //Provide a way for ethers to connect to the blockchain
