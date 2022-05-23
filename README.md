@@ -9,7 +9,11 @@ npm i -D hardhat
 npm i -D @nomiclabs/hardhat-etherscan                     // Give us etherscan verify command on hardhat
 npm i -D dotenv                                           // Use environnement variables in .env
 npm i -D @openzeppelin/contracts                          // Provide secure way of writing smart contract
-npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 // For styling UI
+npm i -D base64-sol
+```
+Compile smart contract, run:
+```shell
+npx hardhat compile
 ```
 
 To deploy a smart contract to a testnet (for example: ropsten testnet network), run: 

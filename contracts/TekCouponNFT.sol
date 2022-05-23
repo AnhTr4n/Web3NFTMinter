@@ -23,7 +23,8 @@ contract TekCouponNFT is ERC721, Ownable {
         mintPrice = 0.02 ether;
         totalSupply = 0;
         maxSupply = 1000;
-        maxPerWallet = 3;
+        maxPerWallet = 10;
+        withdrawWallet = payable(0x31E2912c35bDA8345ba0dE2D0613a2a33ACBb390);
         //set withdraw wallet address
     }
 
