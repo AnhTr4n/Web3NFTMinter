@@ -1,6 +1,9 @@
 # NFT Minter Hardhat Project
 
-Create react-app npx creat-react-app [name]
+Create react-app 
+```shell
+npx creat-react-app [name]
+```
 
 Create .env file with these attributes:
 ```shell
