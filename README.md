@@ -1,7 +1,12 @@
 # NFT Minter Hardhat Project
 
-Create react-app
-npx creat-react-app [name]
+Create .env file with these attributes:
+```shell
+ALCHEMY_API_URL=
+ETHERSCAN_WEB3_MINT_NFT_API_KEY=
+PRIVATE_KEY=
+PUBLIC_KEY=
+```
 
 Development dependencies:
 ```shell
