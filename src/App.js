@@ -28,7 +28,7 @@ import Page from './layouts/Page'
 import Wallet from './pages/Wallet'
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
-import TekCouponNFT from "./TekCouponNFT.json"
+import TekCouponNFT from "./artifacts/contracts/TekCouponNFT.sol/TekCouponNFT.json"
 
 function App() {
   const navigate = useNavigate()

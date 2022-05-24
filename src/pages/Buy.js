@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ethers, BigNumber } from "ethers";
-import TekCouponNFT from '../TekCouponNFT.json';
+import TekCouponNFT from '../artifacts/contracts/TekCouponNFT.sol/TekCouponNFT.json';
 function Buy({address}) {
   const tekCouponNFTContractAddress = "0x432adb4CD7fAAeD9F5536830285bca58026778a7";
   const [mintAmount, setMintAmount] = useState(1);
