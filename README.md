@@ -20,7 +20,7 @@ npm i
 ```shell
 npx hardhat compile
 ```
-========================================================================================================
+==========================================================================================
 When you create new contract or update a current one:
 
 To deploy a new smart contract to a testnet (for example: ropsten testnet network), run: 
